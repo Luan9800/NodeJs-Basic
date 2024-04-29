@@ -1,16 +1,17 @@
-//Importar o Express
+// Importando o Express
 var express = require('express');
 
-//App
+// Criando uma instância do aplicativo Express
 var app = express();
 
-//Especificar local de CSS e da imagem
+// Especificando o diretório público para arquivos estáticos (como CSS e imagens)
 app.use(express.static(__dirname + '/publico'));
 
-//Rotas
+// Definindo uma rota para a raiz do site ('/')
 app.get('/', function (req, res) {
+    // Enviando o arquivo HTML 'pagina.html' quando a rota raiz é acessada
     res.sendFile(__dirname + '/pagina.html'); 
 });
-  
-//Servidor
+
+// Iniciando o servidor na porta 8080
 app.listen(8080);
